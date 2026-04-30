@@ -34,8 +34,8 @@ export default function Products() {
                 src={product.thumbnail}
                 loading={index < 1 ? "eager" : "lazy"}
                 fetchPriority={index < 1 ? "high" : "auto"}
-                width={200}
-                height={200}
+                  width={200}
+                  height={200}
                 alt={product.title}
                 className="w-full h-full object-cover"
                 decoding="async"

@@ -80,6 +80,7 @@ export default function Home() {
         </div>
       </section>
 
+      <div className="content-visibility-[auto] will-change-transform contain-intrinsic-size-[1000px]">
       {/* <!-- ================= FEATURED PRODUCTS ================= --> */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6">
@@ -347,6 +348,7 @@ export default function Home() {
           </div>
         </div>
       </footer>
+      </div>
     </>
   );
 }
