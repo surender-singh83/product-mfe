@@ -67,7 +67,7 @@ export default function Home() {
               fetchPriority={"high"}
               width={448}
               height={672}
-              decoding="async"
+              decoding="auto"
               src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=60&w=448&auto=format&fit=crop"
               srcSet="
     https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=60&w=320&auto=format&fit=crop 320w,
