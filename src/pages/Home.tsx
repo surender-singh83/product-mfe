@@ -38,11 +38,11 @@ export default function Home() {
               Summer Collection 2026
             </p>
 
-            <h2 className="text-5xl font-extrabold leading-tight mb-6">
+            <h2 className="text-2xl md:text-5xl font-extrabold leading-tight mb-6">
               Discover Premium Fashion For Every Style
             </h2>
 
-            <p className="text-lg text-indigo-100 mb-8">
+            <p className="text-md md:text-lg text-indigo-100 mb-8">
               Upgrade your wardrobe with the latest trends, premium quality, and
               unbeatable prices.
             </p>
