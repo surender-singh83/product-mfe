@@ -31,7 +31,7 @@ export default function Home() {
       </header>
 
       {/* <!-- ================= HERO SECTION ================= --> */}
-      <section className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+      <section className="bg-indigo-600 text-white">
         <div className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-10 items-center">
           <div>
             <p className="uppercase tracking-widest text-sm mb-4 text-indigo-200">
@@ -62,7 +62,7 @@ export default function Home() {
             <img
               // src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=448&auto=format&fit=crop"
               alt="Fashion Banner"
-              className="rounded-3xl shadow-2xl w-full max-w-lg object-cover"
+              className="rounded-3xl w-full max-w-lg object-cover"
               loading={"eager"}
               fetchPriority={"high"}
               width={448}
