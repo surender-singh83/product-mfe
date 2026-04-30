@@ -60,7 +60,7 @@ export default function Home() {
 
           <div className="flex justify-center">
             <img
-              src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=448&auto=format&fit=crop"
+              // src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=448&auto=format&fit=crop"
               alt="Fashion Banner"
               className="rounded-3xl shadow-2xl w-full max-w-lg object-cover"
               loading={"eager"}
@@ -68,6 +68,13 @@ export default function Home() {
               width={448}
               height={672}
               decoding="async"
+              src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=60&w=448&auto=format&fit=crop"
+              srcSet="
+    https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=60&w=320&auto=format&fit=crop 320w,
+    https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=60&w=448&auto=format&fit=crop 448w,
+    https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=60&w=640&auto=format&fit=crop 640w
+  "
+              sizes="(max-width: 768px) 100vw, 448px"
             />
           </div>
         </div>
