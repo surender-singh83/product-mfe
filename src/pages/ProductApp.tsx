@@ -37,6 +37,7 @@ export default function Products() {
                 height={200}
                 alt={product.title}
                 className="w-full h-full object-cover"
+                decoding="async"
               />
               </div>
               {/* <!-- Card Content --> */}

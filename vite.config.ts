@@ -19,8 +19,8 @@ export default defineConfig({
   ],
   build: {
     target: "esnext",
-    modulePreload: false,
-    cssCodeSplit: false,
+    modulePreload: true,
+    cssCodeSplit: true,
 
   },
   server: {
