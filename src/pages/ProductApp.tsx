@@ -20,19 +20,20 @@ export default function Products() {
   });
   console.log(data);
   return (
+  
     <div>
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-5">
         {data?.pages.map((page:any) =>
           page.products.map((product: any, index: number) => (
             <div
               key={product.id}
-              className="content-visibility-[auto] contain-intrinsic-size-[300px] max-w-sm bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300"
+              className="content-visibility-[auto] will-change-transform contain-intrinsic-size-[300px] max-w-sm bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300"
             >
               <div className="w-48 m-auto h-48">
               <img
                 src={product.thumbnail}
-                loading={index < 4 ? "eager" : "lazy"}
-                fetchPriority={index < 4 ? "high" : "auto"}
+                loading={index < 1 ? "eager" : "lazy"}
+                fetchPriority={index < 1 ? "high" : "auto"}
                 width={200}
                 height={200}
                 alt={product.title}
