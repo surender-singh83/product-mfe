@@ -34,7 +34,7 @@ export default function Home() {
       <section className="bg-indigo-600 text-white">
         <div className="max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-10 items-center">
           <div>
-            <p className="uppercase tracking-widest text-sm mb-4 text-indigo-200">
+            <p className="uppercase tracking-widest text-sm mb-4 text-white">
               Summer Collection 2026
             </p>
 
