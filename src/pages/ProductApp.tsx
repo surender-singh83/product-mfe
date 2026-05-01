@@ -1,45 +1,52 @@
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { fetchProducts } from "../utils";
 
-
-
-export default function Products() {
+export default function Products({ searchKey }: { searchKey?: string | null }) {
   const { data, fetchNextPage, hasNextPage } = useInfiniteQuery({
-    queryKey: ["products"],
+    queryKey: ["products", searchKey],
 
-    queryFn: fetchProducts,
+    queryFn: ({ pageParam }) =>
+      fetchProducts({
+        pageParam,
+        searchKey,
+      }),
 
     initialPageParam: 0,
 
-    getNextPageParam: (lastPage:any, allPages:any) => {
+    getNextPageParam: (lastPage: any, allPages: any) => {
       const nextSkip = allPages.length * 10;
 
       return nextSkip < lastPage.total ? nextSkip : undefined;
     },
+    // Revalidation Options
+    staleTime: 0, // 5 mins
+    gcTime: 0, // cache for 10 mins
 
+    refetchOnWindowFocus: true,
+    refetchOnReconnect: true,
+    refetchOnMount: true,
   });
   console.log(data);
   return (
-  
     <div>
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-5">
-        {data?.pages.map((page:any) =>
+      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-5 px-6 mt-5">
+        {data?.pages.map((page: any) =>
           page.products.map((product: any, index: number) => (
             <div
               key={product.id}
               className="content-visibility-[auto] will-change-transform contain-intrinsic-size-[300px] max-w-sm bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300"
             >
               <div className="w-48 m-auto h-48">
-              <img
-                src={product.thumbnail}
-                loading={index < 1 ? "eager" : "lazy"}
-                fetchPriority={index < 1 ? "high" : "auto"}
+                <img
+                  src={product.thumbnail}
+                  loading={index < 1 ? "eager" : "lazy"}
+                  fetchPriority={index < 1 ? "high" : "auto"}
                   width={200}
                   height={200}
-                alt={product.title}
-                className="w-full h-full object-cover"
-                decoding="async"
-              />
+                  alt={product.title}
+                  className="w-full h-full object-cover"
+                  decoding="async"
+                />
               </div>
               {/* <!-- Card Content --> */}
               <div className="p-5">
@@ -75,12 +82,14 @@ export default function Products() {
       </div>
 
       {hasNextPage && (
-        <button
-          onClick={() => fetchNextPage()}
-          className="mt-5 px-5 py-2 bg-indigo-600 text-white rounded-lg"
-        >
-          Load More
-        </button>
+        <div className="text-center">
+          <button
+            onClick={() => fetchNextPage()}
+            className="my-5 px-5 py-2 bg-indigo-600 text-white rounded-lg"
+          >
+            Load More
+          </button>
+        </div>
       )}
     </div>
   );
