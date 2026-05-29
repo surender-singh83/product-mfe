@@ -1,6 +1,5 @@
-import React from 'react'
 import { useSearchParams } from 'react-router-dom'
-import Products from './ProductApp';
+import Products from '../components/ProductList';
 
 const SearchPage = () => {
     const [searchParams] = useSearchParams();

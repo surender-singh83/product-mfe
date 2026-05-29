@@ -1,9 +1,13 @@
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import SearchBar from "../SearchBar";
 import { debounce } from "../../utils";
+import type { RootState } from "../../redux/store";
+import { useSelector } from "react-redux";
 
 const Header: React.FC = () => {
+  const items = useSelector((state: RootState)=> state.cart.items)
+  const cartQty = items.reduce((acc, cur)=> acc+=cur.quantity, 0)
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
   const moveToSearch = useMemo(
@@ -16,7 +20,17 @@ const Header: React.FC = () => {
   const handleSearch = (val: string) => {
     setSearch(val);
     moveToSearch(val);
-  };
+  }
+  // alert('hitt')
+  console.log("Header render");
+console.log("Search render");
+
+
+useEffect(()=>{
+window.addEventListener("cart:add", (e:any) => {
+  console.log('DATAAAA', e.detail);
+});
+}, [])
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="mx-auto px-6 py-4 flex items-center justify-between">
@@ -36,7 +50,7 @@ const Header: React.FC = () => {
         </nav>
 
         <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2 rounded-lg transition">
-          Cart (2)
+          Cart {cartQty ?? 0}
         </button>
       </div>
     </header>

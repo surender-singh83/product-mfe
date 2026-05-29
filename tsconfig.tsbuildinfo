@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/global.d.ts","./src/main.tsx","./src/utils.ts","./src/componenets/header/header.tsx","./src/componenets/searchbar/searchbar.tsx","./src/componenets/searchbar/index.ts","./src/componenets/searchbar/types.ts","./src/pages/about.tsx","./src/pages/home.tsx","./src/pages/productapp.tsx","./src/pages/searchpage.tsx"],"errors":true,"version":"6.0.3"}

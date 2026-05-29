@@ -13,14 +13,15 @@ export default defineConfig({
       filename: "remoteEntry.js",
       exposes: {
         "./ProductApp": "./src/pages/ProductApp",
+        "./StoreProvider": "./src/redux/store.tsx",
       },
-      shared: ["react", "react-dom"],
+      shared: ["react", "react-dom", "react-router-dom", "tailwindcss", 'react-redux', '@reduxjs/toolkit'],
     }),
   ],
   build: {
     target: "esnext",
     modulePreload: true,
-    cssCodeSplit: true,
+    cssCodeSplit: false,
 
   },
   server: {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 // import { useNavigate } from "react-router-dom";
 import type { SearchBarProps } from "./types";
 
@@ -27,6 +27,14 @@ const SearchBar: React.FC<SearchBarProps> = ({
       }
     }
   };
+
+  alert(1235555)
+
+  useEffect(()=>{
+ console.log("Header render");
+console.log("Search render");
+  }, [])
+ 
 
   return (
     <input
