@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import useProduct from "../redux/hooks/useProduct";
 import DataWorker from "../worker/data.worker?worker";
-import EVENTS, { emit } from "../../../packages/event-bus";
+import EVENTS, { emit } from "@surenderrawat83/shared-ui-packages";
 
 export default function Products({ searchKey }: { searchKey?: string | null }) {
   const fetchingRef = useRef(false);
